@@ -12,15 +12,53 @@
 
   // Expose any public functions or constructors as properties on your namesapce.
   harmOsc.play = function () {
-    var harmOsc = flock.synth({
+    var fundamentalSin = flock.synth({
       synthDef: {
-        ugen: "flock.ugen.out",
-        sources: [
-          {
-            ugen: "flock.ugen.sinOsc",
-            freq: fundamental
-          }
-        ]
+        ugen: "flock.ugen.sinOsc",
+        freq: fundamental,
+        mul: 0.1
+      }
+    });
+    var secondorderSin = flock.synth({
+      synthDef: {
+        ugen: "flock.ugen.sinOsc",
+        freq: fundamental*2,
+        mul: 0.1
+      }
+    });
+    var secondorderSin = flock.synth({
+      synthDef: {
+        ugen: "flock.ugen.sinOsc",
+        freq: fundamental*3,
+        mul: 0.1
+      }
+    });
+    var secondorderSin = flock.synth({
+      synthDef: {
+        ugen: "flock.ugen.sinOsc",
+        freq: fundamental*4,
+        mul: 0.1
+      }
+    });
+    var secondorderSin = flock.synth({
+      synthDef: {
+        ugen: "flock.ugen.sinOsc",
+        freq: fundamental*5,
+        mul: 0.1
+      }
+    });
+    var secondorderSin = flock.synth({
+      synthDef: {
+        ugen: "flock.ugen.sinOsc",
+        freq: fundamental*6,
+        mul: 0.1
+      }
+    });
+    var secondorderSin = flock.synth({
+      synthDef: {
+        ugen: "flock.ugen.sinOsc",
+        freq: fundamental*7,
+        mul: 0.1
       }
     });
     environment.start();
