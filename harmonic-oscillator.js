@@ -8,12 +8,13 @@
   fluid.registerNamespace("harmOsc");
 
   var environment = flock.init();
-  var fundamental = 216;
 
   // Expose any public functions or constructors as properties on your namesapce.
   harmOsc.play = function () {
+    var fundamental = 216;
     var fundamentalSin = flock.synth({
       synthDef: {
+        id: "fundamentalSin",
         ugen: "flock.ugen.sinOsc",
         freq: fundamental,
         mul: 0.1
@@ -61,7 +62,16 @@
         mul: 0.1
       }
     });
-    environment.start();
+    $(document).ready(function () {
+      $("#setFreqButton").one("click", function () {
+        environment.start();
+      });
+      $("#setFreqButton").click(function () {
+        console.log("BLEG");
+        var newFreq = Math.random() * 1000 + 1060;
+        var fundamental = newFreq;
+        harmOsc.set("fundamentalSin.freq", "fundamental");
+      });
+    });
   };
-
 }());

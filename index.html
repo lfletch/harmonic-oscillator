@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>A Flocking Project</title>
+<head>
+  <meta charset="UTF-8">
+  <title>A Flocking Project</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="flocking/flocking-all.js"></script>
+  <script src="harmonic-oscillator.js"></script>
 
-        <script src="flocking/flocking-all.js"></script>
-        <script src="harmonic-oscillator.js"></script>
+</head>
 
-    </head>
-
-    <body>
-
-        <script>
-            harmOsc.play();
-        </script>
-    </body>
+<body>
+  <script>
+  harmOsc.play();
+  </script>
+  <button id="setFreqButton">Change it!</button>
+  <form>
+    <input type="number" name="userfrequency" min ="65" max="12000">
+  </form>
+</body>
 </html>
