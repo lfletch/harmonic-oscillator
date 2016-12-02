@@ -27,35 +27,35 @@
         mul: 0.1
       }
     });
-    var secondorderSin = flock.synth({
+    var thirdorderSin = flock.synth({
       synthDef: {
         ugen: "flock.ugen.sinOsc",
         freq: fundamental*3,
         mul: 0.1
       }
     });
-    var secondorderSin = flock.synth({
+    var fourthorderSin = flock.synth({
       synthDef: {
         ugen: "flock.ugen.sinOsc",
         freq: fundamental*4,
         mul: 0.1
       }
     });
-    var secondorderSin = flock.synth({
+    var fifthorderSin = flock.synth({
       synthDef: {
         ugen: "flock.ugen.sinOsc",
         freq: fundamental*5,
         mul: 0.1
       }
     });
-    var secondorderSin = flock.synth({
+    var sixthorderSin = flock.synth({
       synthDef: {
         ugen: "flock.ugen.sinOsc",
         freq: fundamental*6,
         mul: 0.1
       }
     });
-    var secondorderSin = flock.synth({
+    var seventhorderSin = flock.synth({
       synthDef: {
         ugen: "flock.ugen.sinOsc",
         freq: fundamental*7,
@@ -67,10 +67,9 @@
         environment.start();
       });
       $("#setFreqButton").click(function () {
-        console.log("BLEG");
         var newFreq = Math.random() * 1000 + 1060;
         var fundamental = newFreq;
-        harmOsc.set("fundamentalSin.freq", "fundamental");
+        console.log(fundamental);
       });
     });
   };
