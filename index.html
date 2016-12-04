@@ -16,9 +16,37 @@
   </script>
   <button id="startSound">Make Noise</button>
   <button id="stopSound">Stop Making Noise</button>
-  <button id="setFreqButton">Set Frequency</button>
+  <form method="post">
+    <label for="fundamentalAmplitude">Fundamental:</label>
+    <input type="range" name="fundamentalAmplitude" id="fundAmplitude" value="70" min="0" max="100">
+  </form>
+  <form method="post">
+    <label for="secondOrderAmplitude">Second Harmonic:</label>
+    <input type="range" name="secondOrderAmplitude" id="secondAmplitude" value="70" min="0" max="100">
+  </form>
+  <form method="post">
+    <label for="thirdOrderAmplitude">Third Harmonic:</label>
+    <input type="range" name="thirdOrderAmplitude" id="thirdAmplitude" value="70" min="0" max="100">
+  </form>
+  <form method="post">
+    <label for="fourthOrderAmplitude">Fourth Harmonic:</label>
+    <input type="range" name="fourthOrderAmplitude" id="fourthAmplitude" value="70" min="0" max="100">
+  </form>
+  <form method="post">
+    <label for="fifthOrderAmplitude">Fifth Harmonic:</label>
+    <input type="range" name="fifthOrderAmplitude" id="fifthAmplitude" value="70" min="0" max="100">
+  </form>
+  <form method="post">
+    <label for="sixthOrderAmplitude">Sixth Harmonic:</label>
+    <input type="range" name="sixthOrderAmplitude" id="sixthAmplitude" value="70" min="0" max="100">
+  </form>
+  <form method="post">
+    <label for="seventhAmplitudeOrderAmplitude">Seventh Harmonic:</label>
+    <input type="range" name="seventhOrderAmplitude" id="seventhAmplitude" value="70" min="0" max="100">
+  </form>
+  <!--<button id="setFreqButton">Set Frequency</button>
   <form>
     <input type="number" name="userfrequency" min ="65" max="12000">
-  </form>
+  </form> -->
 </body>
 </html>

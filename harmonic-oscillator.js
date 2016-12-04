@@ -16,7 +16,7 @@
           id: ("oscillator" + i),
           ugen: "flock.ugen.sinOsc",
           freq:216 * (i+1),
-          mul: 0.1,
+          mul: 0.07,
         }
       }))
     };
@@ -24,13 +24,50 @@
       $("#startSound").click(function () {
         environment.start();
       });
-      $("#setFreqButton").click(function () {
-        var newFreq = Math.random() * 1000 + 1060;
-        var fundamental = newFreq;
-        console.log(fundamental);
-      });
       $("#stopSound").click(function(){
         environment.stop();
+      });
+      $("#fundAmplitude").change(function(){
+        var fundAmplitude = (($(this).val()) / 1000);
+        synths[0].set({
+          "oscillator0.mul": fundAmplitude
+        });
+      });
+      $("#secondAmplitude").change(function(){
+        var secondAmplitude = (($(this).val()) / 1000);
+        synths[1].set({
+          "oscillator1.mul": secondAmplitude
+        });
+      });
+      $("#thirdAmplitude").change(function(){
+        var thirdAmplitude = (($(this).val()) / 1000);
+        synths[2].set({
+          "oscillator2.mul": thirdAmplitude
+        });
+      });
+      $("#fourthAmplitude").change(function(){
+        var fourthAmplitude = (($(this).val()) / 1000);
+        synths[3].set({
+          "oscillator3.mul": fourthAmplitude
+        });
+      });
+      $("#fifthAmplitude").change(function(){
+        var fifthAmplitude = (($(this).val()) / 1000);
+        synths[4].set({
+          "oscillator4.mul": fifthAmplitude
+        });
+      });
+      $("#sixthAmplitude").change(function(){
+        var sixthAmplitude = (($(this).val()) / 1000);
+        synths[5].set({
+          "oscillator5.mul": sixthAmplitude
+        });
+      });
+      $("#seventhAmplitude").change(function(){
+        var seventhAmplitude = (($(this).val()) / 1000);
+        synths[6].set({
+          "oscillator6.mul": seventhAmplitude
+        });
       });
     });
   };
