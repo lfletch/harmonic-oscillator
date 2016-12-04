@@ -63,13 +63,16 @@
       }
     });
     $(document).ready(function () {
-      $("#setFreqButton").one("click", function () {
+      $("#startSound").click(function () {
         environment.start();
       });
       $("#setFreqButton").click(function () {
         var newFreq = Math.random() * 1000 + 1060;
         var fundamental = newFreq;
         console.log(fundamental);
+      });
+      $("#stopSound").click(function(){
+        environment.stop();
       });
     });
   };
