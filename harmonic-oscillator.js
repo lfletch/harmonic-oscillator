@@ -1,6 +1,4 @@
 (function () {
-
-  // JavaScript strict mode is a good thing.
   "use strict";
 
   // Define a unique global namespace for your stuff.
@@ -8,60 +6,20 @@
   fluid.registerNamespace("harmOsc");
 
   var environment = flock.init();
-
-  // Expose any public functions or constructors as properties on your namesapce.
+  var synths = [];
+  // create list of synths
   harmOsc.play = function () {
-    var fundamental = 216;
-    var fundamentalSin = flock.synth({
-      synthDef: {
-        id: "fundamentalSin",
-        ugen: "flock.ugen.sinOsc",
-        freq: fundamental,
-        mul: 0.1
-      }
-    });
-    var secondorderSin = flock.synth({
-      synthDef: {
-        ugen: "flock.ugen.sinOsc",
-        freq: fundamental*2,
-        mul: 0.1
-      }
-    });
-    var thirdorderSin = flock.synth({
-      synthDef: {
-        ugen: "flock.ugen.sinOsc",
-        freq: fundamental*3,
-        mul: 0.1
-      }
-    });
-    var fourthorderSin = flock.synth({
-      synthDef: {
-        ugen: "flock.ugen.sinOsc",
-        freq: fundamental*4,
-        mul: 0.1
-      }
-    });
-    var fifthorderSin = flock.synth({
-      synthDef: {
-        ugen: "flock.ugen.sinOsc",
-        freq: fundamental*5,
-        mul: 0.1
-      }
-    });
-    var sixthorderSin = flock.synth({
-      synthDef: {
-        ugen: "flock.ugen.sinOsc",
-        freq: fundamental*6,
-        mul: 0.1
-      }
-    });
-    var seventhorderSin = flock.synth({
-      synthDef: {
-        ugen: "flock.ugen.sinOsc",
-        freq: fundamental*7,
-        mul: 0.1
-      }
-    });
+    var i = 0;
+    for (i = 0; i < 12; i+=1) {
+      synths.push(flock.synth({
+        synthDef: {
+          id: ("oscillator" + i),
+          ugen: "flock.ugen.sinOsc",
+          freq:216 * (i+1),
+          mul: 0.1,
+        }
+      }))
+    };
     $(document).ready(function () {
       $("#startSound").click(function () {
         environment.start();
